@@ -50,6 +50,14 @@ public class GFKGorevEkle extends testAutomations.TestBase {
     @FindBy(xpath = "//html")
     public WebElement haritaSec;
 
+    @FindBy(xpath = "//input[@id='bolge-adi-txt']")
+    public WebElement gorevAdıEkle;
+
+    @FindBy(xpath = "//button[@id='btn-add-store']")
+    public WebElement kaydetButonu;
+
+
+
     @Test
     public void testGFKGorevEkle() throws Exception {
         PageFactory.initElements(driver, this);
@@ -78,7 +86,6 @@ Thread.sleep(2000);
         magazaSorgulaButonu.click();
 
         Fwait.until(ExpectedConditions.visibilityOf(magazaHaritadaGit));
-
         Actions haritadagit = new Actions(driver);
         haritadagit.doubleClick(magazaHaritadaGit).perform();
 
@@ -100,18 +107,32 @@ Thread.sleep(2000);
         Fwait.until(ExpectedConditions.visibilityOf(haritaSec));
 
         Actions builder1 = new Actions(driver);
-        builder1.moveToElement(haritaSec).clickAndHold().moveByOffset(0, 100).release().perform();
+        builder1.moveToElement(haritaSec).clickAndHold().moveByOffset(0, 20).release().perform();
         builder1.click().perform();
 
         Actions builder2 = new Actions(driver);
-        builder2.moveToElement(haritaSec).clickAndHold().moveByOffset(500, 0).release().perform();
+        builder2.moveToElement(haritaSec).clickAndHold().moveByOffset(10, 0).release().perform();
         builder2.click().perform();
 
         Actions builder3 = new Actions(driver);
-        builder3.moveToElement(haritaSec).clickAndHold().moveByOffset(50, 0).release().perform();
+        builder3.moveToElement(haritaSec).clickAndHold().moveByOffset(0, 0).release().perform();
         haritaSec.click();
         builder3.doubleClick().perform();
 
+
+        Fwait.until(ExpectedConditions.visibilityOf(gorevAdıEkle));
+        gorevAdıEkle.sendKeys("otomasyontest");
+
+
+        js.executeScript("window.scrollBy(0,1000)");
+
+
+        Fwait.until(ExpectedConditions.visibilityOf(kaydetButonu));
+        kaydetButonu.click();
+
+
+
+        Thread.sleep(3000);
         System.out.println("Test Tamamlandı!");
         Thread.sleep(3000);
 

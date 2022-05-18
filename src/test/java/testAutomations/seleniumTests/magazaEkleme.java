@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import testAutomations.Kullanici;
 
-public class MagazaSorgulama extends testAutomations.TestBase {
+public class magazaEkleme extends testAutomations.TestBase {
     private String baseUrl;
     private boolean acceptNextAlert = true;
 
@@ -21,8 +21,8 @@ public class MagazaSorgulama extends testAutomations.TestBase {
     @FindBy(xpath = "//body/div[1]/div[4]/div[1]/div[2]/a[1]/img[1]")
     public WebElement haritaSecimButonu;
 
-    @FindBy(xpath = "//body/div[@id='main-content']/div[@id='layer-control']/div[@id='layersplit']/div[@id='layer-list']/div[@id='mCSB_1']/div[@id='mCSB_1_container']/ul[1]/li[2]/span[1]/div[1]")
-    public WebElement magazaKatmaniAcmaButonu;
+//    @FindBy(xpath = "//body/div[@id='main-content']/div[@id='layer-control']/div[@id='layersplit']/div[@id='layer-list']/div[@id='mCSB_1']/div[@id='mCSB_1_container']/ul[1]/li[2]/span[1]/div[1]")
+//    public WebElement magazaKatmaniAcmaButonu;
 
     @FindBy(xpath = "//header/div[2]/nav[1]/div[2]/ul[3]/li[2]/a[1]")
     public WebElement magazaButonu;
@@ -44,8 +44,24 @@ public class MagazaSorgulama extends testAutomations.TestBase {
     public WebElement magazaPencereKapamaButonu;
 
 
+    @FindBy(xpath = "//h4[contains(text(),'Mağaza Ekle')]")
+    public WebElement magazaEklemeButonu;
+
+    @FindBy(xpath = "//html")
+    public WebElement haritaSec;
+
+    @FindBy(xpath = "//body/div[@id='store_panel']/div[2]/div[1]/div[2]/div[1]/form[1]/div[1]/div[4]/div[1]/input[1]")
+    public WebElement tabelaAdıEkle;
+
+
+    @FindBy(xpath = "//button[@id='btn_add_store']")
+    public WebElement ekleButonu;
+
+    @FindBy(xpath = "//body/div[15]/div[1]/div[1]/div[3]/button[1]")
+    public WebElement uyarıMesajı;
+
     @Test
-    public void testMagazaSorgulama() throws Exception {
+    public void testmagazaEkleme() throws Exception {
         PageFactory.initElements(driver, this);
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -71,7 +87,7 @@ public class MagazaSorgulama extends testAutomations.TestBase {
         Fwait.until(ExpectedConditions.visibilityOf(magazaSorgulamaButonu));
         magazaSorgulamaButonu.click();
 
-        Fwait.until(ExpectedConditions.visibilityOf(magazaButonu));
+        Fwait.until(ExpectedConditions.visibilityOf(magazaSorgulaButonu));
         magazaSorgulaButonu.click();
 
         Fwait.until(ExpectedConditions.visibilityOf(idFiltreleme));
@@ -86,6 +102,32 @@ public class MagazaSorgulama extends testAutomations.TestBase {
         Fwait.until(ExpectedConditions.visibilityOf(magazaPencereKapamaButonu));
         magazaPencereKapamaButonu.click();
 
+
+        Fwait.until(ExpectedConditions.visibilityOf(magazaButonu));
+        magazaButonu.click();
+
+        Fwait.until(ExpectedConditions.visibilityOf(magazaEklemeButonu));
+        magazaEklemeButonu.click();
+
+        Fwait.until(ExpectedConditions.visibilityOf(haritaSec));
+        haritaSec.click();
+
+        Fwait.until(ExpectedConditions.visibilityOf(tabelaAdıEkle));
+        tabelaAdıEkle.sendKeys("otomasyontest");
+
+
+        js.executeScript("window.scrollBy(0,10000)");
+
+
+        Fwait.until(ExpectedConditions.visibilityOf(ekleButonu));
+        ekleButonu.click();
+
+        Fwait.until(ExpectedConditions.visibilityOf(uyarıMesajı));
+        uyarıMesajı.click();
+
+
+
+        Thread.sleep(3000);
 
         System.out.println("Test Tamamlandı!");
         Thread.sleep(3000);
