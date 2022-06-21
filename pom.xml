@@ -99,14 +99,14 @@
                     <argLine>-Dfile.encoding=${project.build.sourceEncoding}</argLine>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-<!--                        <include>*/seleniumTests/*.java</include>-->
+                        <include>*/seleniumTests/*.java</include>
 <!--                        <include>**/BotasLogin*.java</include>-->
 <!--                        <include>**/FiltreliArama*.java</include>-->
 <!--                        <include>*/seleniumTests/*.java</include>-->
 <!--                        <include>**/GFKgiris*.java</include>-->
 <!--                        <include>**/GFKGorevEkle*.java</include>-->
-                      <include>**/MagazaSorgulama*.java</include>
-                        <include>**/gorevSorgulama*.java</include>
+<!--                      <include>**/MagazaSorgulama*.java</include>-->
+<!--                        <include>**/gorevSorgulama*.java</include>-->
 
 
                         <!--<include>**/package/*.java</include>
