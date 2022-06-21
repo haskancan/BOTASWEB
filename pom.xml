@@ -102,7 +102,7 @@
                         <include>*/seleniumTests/*.java</include>
 <!--                        <include>**/BotasLogin*.java</include>-->
 <!--                        <include>**/FiltreliArama*.java</include>-->
-<!--                        <include>*/seleniumTests/*.java</include>-->
+                        <include>*/seleniumTests/*.java</include>
 <!--                        <include>**/GFKgiris*.java</include>-->
 <!--                        <include>**/GFKGorevEkle*.java</include>-->
 <!--                      <include>**/MagazaSorgulama*.java</include>-->
