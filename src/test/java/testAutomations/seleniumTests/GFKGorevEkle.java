@@ -119,7 +119,6 @@ Thread.sleep(2000);
         haritaSec.click();
         builder3.doubleClick().perform();
 
-
         Fwait.until(ExpectedConditions.visibilityOf(gorevAdıEkle));
         gorevAdıEkle.sendKeys("otomasyontest");
 

@@ -1,6 +1,5 @@
 package testAutomations.seleniumTests;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -95,7 +94,6 @@ public class magazaEkleme extends testAutomations.TestBase {
         idFiltreleme.sendKeys(Keys.ENTER);
 
         Fwait.until(ExpectedConditions.visibilityOf(magazaHaritadaGit));
-
         Actions haritadagit = new Actions(driver);
         haritadagit.doubleClick(magazaHaritadaGit).perform();
 
